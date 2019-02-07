@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.5">
-    <title>George Christie Development</title>
+    <title>Blog | George Christie Development</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
@@ -26,44 +26,29 @@
             <div class="navbar-nav ml-auto">
                 <a class="nav-item nav-link" href="https://github.com/GTXiee" target="_blank">GitHub</a>
                 <a class="nav-item nav-link" href="{% static 'resume.pdf' %}" target="_blank">Resume</a>
-                <a class="nav-item nav-link" href="{% url 'allblogs' %}">Blog</a>
+                <a class="nav-item nav-link active" href="{% url 'allblogs' %}">Blog</a>
             </div>
         </div>
     </nav>
 </header>
 
 <main role="main">
+    <div class="container">
+        <h1 class="text-center pt-3">Blog</h1>
+        <br/>
+        <br/>
+        <h2>Latest Posts</h2>
+        <hr/>
 
-    <section class="jumbotron text-center">
-        <div class="container">
-            <h1 class="jumbotron-heading">George Christie</h1>
-            <p class="lead text-muted">Hey, my name is George I have a passion for creating websites using Django.</p>
-            <p>
-                <a href="mailto:georgechristiedev@gmail.com" class="btn btn-primary my-2">Email me</a>
-            </p>
-            <img class="img-fluid img-thumbnail" src="{% static 'george.png' %}"/>
-        </div>
-    </section>
-
-    <div class="album py-5 bg-light">
-        <div class="container">
-
-            <div class="row">
-
-                {% for job in jobs.all %}
-                <div class="col-md-4">
-                    <div class="card mb-4 shadow-sm">
-                        <img class="card-img-top" src="{{ job.image.url }}"/>
-                        <div class="card-body">
-                            <p class="card-text">{{ job.summary }}</p>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
+        {% for post in posts %}
+            <a href="{% url 'detail' post.id %}"><h3>{{ post.title }}</h3></a>
+            {{ post.pub_date_pretty }}
+            <br/>
+            <img class="img-fluid" src="{{ post.image.url }}" width="200"/>
+            <br/>
+            <p>{{ post.summary }}</p>
+        {% endfor %}
     </div>
-
 </main>
 
 <footer class="text-muted">
