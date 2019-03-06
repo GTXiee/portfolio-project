@@ -6,34 +6,71 @@
 
     <main role="main">
 
-        <section class="jumbotron jumbotron-fluid text-center mb-0">
-            <div class="container">
-                <h1 class="jumbotron-heading">George Christie</h1>
-                <p class="lead text-muted">Hey, my name is George and I am self-taught Django developer with a passion
-                    for learning.</p>
-                <img class="img-fluid img-thumbnail" src="{% static 'george.png' %}"/>
-                <p><a href="#portfolio" class="btn btn-primary my-2">View my work</a></p>
+        <section class="container-fluid top-half">
+            <div class="row h-100">
+                <div class="col my-auto text-center">
+                    <h1 class="h2 text-light raleway">Hello, I'm <b class="text-accent">George Christie</b>.<br>
+                        I'm a self-taught Django developer.</h1>
+                    <a href="#portfolio">
+                        <div class="btn-custom-outline mt-2">View my work</div>
+                    </a>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="bg-light">
+            <div class="container py-5">
+                <h2 class="audiowide text-center">About</h2>
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-md-6 col-lg-4 text-center py-3">
+                        <img class="img" src="{% static 'bio-pic-round-300.png' %}"/>
+                    </div>
+                    <div class="col-md-6 col-lg-4 text-center">
+                        <p>I'm currently a Senior Digital Marketing executive at upriseUP in Chesham. During my time
+                            there I
+                            have discovered a love of coding after creating scripts to automate tasks. I have played
+                            with a few
+                            languages and frameworks over the past year, but I have found that Django is the one I've
+                            fallen
+                            in love with.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section>
+            <div class="portfolio py-5 portfolio-section" id="portfolio">
+                <div class="container">
+                    <h2 class="audiowide text-center pb-3">Projects</h2>
+
+                    <div class="row">
+
+                        {% for job in latest_jobs.all %}
+                            <div class="col-sm-6 col-lg-4 job-display">
+                                <a href="{% url 'job_detail' job.id %}">
+                                    {#                                <div class="card mb-4 shadow-sm">#}
+                                    {#                                    <img class="card-img-top" src="{{ job.image.url }}"/>#}
+                                    {#                                    <div class="card-body">#}
+                                    {#                                        <p class="card-text">{{ job.summary }}</p>#}
+                                    {#                                    </div>#}
+                                    {#                                </div>#}
+                                    <img class="img-fluid overlay-image" src="{{ job.image.url }}">
+                                    <div class="overlay-middle">
+                                        <h3 class="h5 font-weight-bold">{{ job.title }}</h3>
+                                        <p>{{ job.summary }}</p>
+                                    </div>
+                                </a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
             </div>
         </section>
 
-        <div class="portfolio py-5 bg-light" id="portfolio">
-            <div class="container">
-
-                <div class="row">
-
-                    {% for job in jobs.all %}
-                        <div class="col-md-4">
-                            <div class="card mb-4 shadow-sm">
-                                <img class="card-img-top" src="{{ job.image.url }}"/>
-                                <div class="card-body">
-                                    <p class="card-text">{{ job.body }}</p>
-                                </div>
-                            </div>
-                        </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
 
     </main>
 

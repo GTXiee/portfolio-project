@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}Portfolio | George Christie Development{% endblock %}
+
+
+{% block content %}
+
+    {#    {% load staticfiles %}#}
+
+    <main role="main">
+
+        <div class="container py-4">
+            <h1 class="text-center audiowide">Portfolio</h1>
+
+            <div class="row py-5">
+                {% for job in latest_jobs.all %}
+                    <div class="col-md-6 job-display">
+                        <a href="{% url 'job_detail' job.id %}">
+                            <img class="img-fluid overlay-image" src="{{ job.image.url }}">
+                            <div class="overlay-middle">
+                                <h3 class="h5 font-weight-bold">{{ job.title }}</h3>
+                                <p>{{ job.summary }}</p>
+                            </div>
+                        </a>
+                    </div>
+
+                {% endfor %}
+            </div>
+        </div>
+
+
+    </main>
+
+{% endblock %}
