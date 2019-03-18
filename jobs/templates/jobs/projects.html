@@ -16,7 +16,7 @@
                 {% for job in latest_jobs.all %}
                     <div class="col-md-6 job-display">
                         <a href="{% url 'job_detail' job.id %}">
-                            <img class="img-fluid overlay-image" src="{{ job.image.url }}">
+                            <img class="img-fluid overlay-image" src="{{ job.portfolio_image.url }}">
                             <div class="overlay-middle">
                                 <h3 class="h5 font-weight-bold">{{ job.title }}</h3>
                                 <p>{{ job.summary }}</p>

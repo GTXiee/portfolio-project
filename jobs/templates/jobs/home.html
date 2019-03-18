@@ -29,12 +29,9 @@
                     </div>
                     <div class="col-md-6 col-lg-4 text-center">
                         <p>I'm currently a Senior Digital Marketing executive at upriseUP in Chesham. During my time
-                            there I
-                            have discovered a love of coding after creating scripts to automate tasks. I have played
-                            with a few
-                            languages and frameworks over the past year, but I have found that Django is the one I've
-                            fallen
-                            in love with.
+                            there I have discovered a love of coding after creating scripts to automate tasks. After
+                            playing with a few languages and frameworks over the past year I have found that the
+                            the power and simplicity of Django make it a joy to work with.
                         </p>
                     </div>
                 </div>
@@ -50,7 +47,7 @@
                     <div class="row">
 
                         {% for job in latest_jobs.all %}
-                            <div class="col-sm-6 col-lg-4 job-display">
+                            <div class="col-md-6 col-lg-4 job-display">
                                 <a href="{% url 'job_detail' job.id %}">
                                     {#                                <div class="card mb-4 shadow-sm">#}
                                     {#                                    <img class="card-img-top" src="{{ job.image.url }}"/>#}
@@ -58,7 +55,7 @@
                                     {#                                        <p class="card-text">{{ job.summary }}</p>#}
                                     {#                                    </div>#}
                                     {#                                </div>#}
-                                    <img class="img-fluid overlay-image" src="{{ job.image.url }}">
+                                    <img class="img-fluid overlay-image" src="{{ job.portfolio_image.url }}">
                                     <div class="overlay-middle">
                                         <h3 class="h5 font-weight-bold">{{ job.title }}</h3>
                                         <p>{{ job.summary }}</p>
