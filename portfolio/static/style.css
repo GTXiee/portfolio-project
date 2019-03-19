@@ -1,0 +1,152 @@
+/*colours*/
+:root {
+    --main-bg-color: #F8F9FA;
+    --dark-bg-color: #243542;
+    --darker-bg-color: #152532;
+    /*--grey-bg-color: #edf0f2;*/
+    --secondary-bg-color: #f2efea;
+    /*--accent-color: #119da4;*/
+    --accent-color: #66d7d1;
+    --text-primary-color: #212529;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--main-bg-color) !important;
+    font-family: 'Raleway', sans-serif;
+    color: var(--text-primary-color);
+}
+
+h1, h2 {
+    font-family: 'Audiowide', cursive;
+    text-transform: lowercase;
+}
+
+a, a:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+footer {
+    background-color: var(--darker-bg-color);
+    color: rgba(255, 255, 255, .5);
+    font-size: 10pt;
+}
+
+footer .icon-box {
+    display: flex;
+    background-color: var(--dark-bg-color);
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 8px;
+    transition-duration: 0.3s;
+}
+
+footer .icon-box i {
+    font-size: 14pt;
+}
+
+footer .icon-box:hover {
+    transform: scale(0.9);
+}
+
+.text-accent {
+    color: var(--accent-color);
+}
+
+.text-primary {
+    color: var(--text-primary-color);
+}
+
+.btn-custom-outline {
+    display: inline-block;
+    border: 1px white solid;
+    color: white;
+    padding: 6px 12px;
+    transition: 0.3s;
+}
+
+.btn-custom-outline:hover {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.btn-custom {
+    display: inline-block;
+    font-size: 10pt;
+    background-color: var(--accent-color);
+    color: #fff;
+    padding: 8px 12px;
+    text-align: center;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-custom i {
+    font-size: 10pt;
+    vertical-align: middle;
+}
+
+.btn-custom:hover {
+    background-color: var(--main-bg-color);
+    color: var(--accent-color);
+}
+
+.raleway {
+    font-family: 'Raleway', sans-serif;
+    text-transform: none;
+}
+
+.top-half {
+    height: 100vh;
+    background-color: var(--dark-bg-color);
+}
+
+.navbar-custom {
+    background-color: var(--darker-bg-color);
+}
+
+.portfolio-section {
+    background-color: var(--secondary-bg-color);
+}
+
+.overlay-image {
+    opacity: 1;
+    display: block;
+    transition: .5s ease;
+    /*backface-visibility: hidden;*/
+}
+
+.overlay-middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+    width: 80%;
+}
+
+.job-display {
+    color: #212529;
+    font-family: 'Raleway', sans-serif;
+}
+
+.job-display a {
+    color: #212529;
+}
+
+.job-display:hover .overlay-image {
+    opacity: 0;
+}
+
+.job-display:hover .overlay-middle {
+    opacity: 1;
+}

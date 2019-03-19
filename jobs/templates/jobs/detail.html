@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title %}{{ job.title }} | George Christie Development{% endblock %}
+
+{% block content %}
+
+    <main role="main">
+
+        <section class="header pt-5 container">
+            <h1 class="text-center audiowide">{{ job.title }}</h1>
+        </section>
+
+        {#        <section class="container pb-4">#}
+        {#            <div class="row justify-content-center">#}
+        {#                <label class="col-6 col-md-3 col-lg-2" for="broad-checkbox">#}
+        {#                    <input id="broad-checkbox" checked="checked" name="match-types" type="checkbox"/>Broad</label>#}
+        {#                <label class="col-6 col-md-3 col-lg-2" for="phrase-checkbox">#}
+        {#                    <input id="phrase-checkbox" name="match-types" type="checkbox"/> Phrase</label>#}
+        {#                <label class="col-6 col-md-3 col-lg-2" for="exact-checkbox">#}
+        {#                    <input id="exact-checkbox" name="match-types" type="checkbox"/> Exact</label>#}
+        {#                <label class="col-6 col-md-3 col-lg-2" for="bmm-checkbox">#}
+        {#                    <input id="bmm-checkbox" name="match-types" type="checkbox"/> BMM</label>#}
+        {#            </div>#}
+        {##}
+        {#            <div class="row">#}
+        {#                <div class="col">#}
+        {#                    <textarea id="input-text-1" class="w-100" rows="12" placeholder="Keyword List"></textarea>#}
+        {#                </div>#}
+        {#            </div>#}
+        {#            <div class="row">#}
+        {#                <div class="col-2 offset-10">#}
+        {#                    <button id="btn-process" class="w-100">Process</button>#}
+        {##}
+        {#                </div>#}
+        {#            </div>#}
+        {#            <div class="row">#}
+        {#                <div class="col">#}
+        {#                    <textarea id="output-text" class="w-100" readonly="readonly" rows="12"#}
+        {#                              placeholder="Output"></textarea>#}
+        {#                </div>#}
+        {#            </div>#}
+        {#            <div class="row">#}
+        {#                <div class="col-2 offset-10">#}
+        {#                    <button id="btn-copy" class="w-100">Copy to Clipboard</button>#}
+        {#                </div>#}
+        {#            </div>#}
+        {#        </section>#}
+
+        <section class="container py-4">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-10 col-lg-8">
+                    <p>{{ job.body }}</p>
+                </div>
+            </div>
+
+            {% if job.completed %}
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10 col-lg-8">
+                        <a href={{ job.url }}>
+                            <div class="text-uppercase btn-custom">
+                                <i class="material-icons">open_in_new</i> View Site
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="row justify-content-center pt-4">
+                    <div class="col-12 col-md-10 col-lg-8">
+                        <img class="img-fluid" src="{{ job.display_image.url }}"/>
+                    </div>
+                </div>
+            {% else %}
+                <div class="row justify-content-center pt-4">
+                    <div class="col-12 col-md-10 col-lg-8">
+                        <img class="img-fluid" src="{% static 'page-not-live.png' %}"/>
+                    </div>
+                </div>
+            {% endif %}
+
+
+        </section>
+
+    </main>
+
+{% endblock %}
