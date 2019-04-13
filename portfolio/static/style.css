@@ -3,8 +3,9 @@
     --main-bg-color: #F8F9FA;
     --dark-bg-color: #243542;
     --darker-bg-color: #152532;
+    --purple-color: #406E8E;
     /*--grey-bg-color: #edf0f2;*/
-    --secondary-bg-color: #f2efea;
+    --secondary-bg-color: #F2F3F4;
     /*--accent-color: #119da4;*/
     --accent-color: #66d7d1;
     --text-primary-color: #212529;
@@ -132,6 +133,7 @@ footer .icon-box:hover {
     opacity: 1;
     display: block;
     transition: .5s ease;
+    min-width: 100%;
     /*backface-visibility: hidden;*/
 }
 
@@ -150,6 +152,7 @@ footer .icon-box:hover {
 .job-display {
     color: #212529;
     font-family: 'Raleway', sans-serif;
+    background-color: white;
 }
 
 .job-display a {
@@ -157,7 +160,7 @@ footer .icon-box:hover {
 }
 
 .job-display:hover .overlay-image {
-    opacity: 0.2;
+    opacity: 0;
 }
 
 .job-display:hover .overlay-middle {
