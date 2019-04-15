@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% load webp_converter %}
+
 {% block content %}
 
     {% load staticfiles %}
@@ -40,7 +42,7 @@
                 <h2 class="audiowide text-center">About</h2>
                 <div class="row justify-content-center align-items-center">
                     <div class="col-md-6 col-lg-4 text-center py-3">
-                        <img class="img" src="{% static 'bio-pic-round-300.png' %}"/>
+                        <img class="img" src="{% static_webp 'bio-pic-round-300.png' %}" alt="Bio picture"/>
                     </div>
                     <div class="col-md-6 col-lg-4 text-center">
                         <p>I'm currently a Senior Digital Marketing executive at upriseUP in Chesham. During my time

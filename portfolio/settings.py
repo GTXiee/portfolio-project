@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'jobs.apps.JobsConfig',
     'blog.apps.BlogConfig',
     'taggit',
+    'webp_converter',
 ]
 
 MIDDLEWARE = [
@@ -65,6 +66,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'webp_converter.context_processors.webp_support',
             ],
         },
     },
