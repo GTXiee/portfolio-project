@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'taggit',
     'webp_converter',
+    'django.contrib.sitemaps',
 ]
 
 MIDDLEWARE = [

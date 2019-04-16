@@ -4,7 +4,7 @@ from .models import Job
 
 
 def home(request):
-    jobs = Job.objects
+    jobs = Job.objects.all()
     return render(request, 'jobs/home.html', {'latest_jobs': jobs})
 
 
@@ -13,6 +13,6 @@ def projects(request):
     return render(request, 'jobs/projects.html', {'latest_jobs': jobs})
 
 
-def job_detail(request, job_id):
-    job = get_object_or_404(Job, pk=job_id)
+def job_detail(request, slug):
+    job = get_object_or_404(Job, slug=slug)
     return render(request, 'jobs/detail.html', {'job': job})
