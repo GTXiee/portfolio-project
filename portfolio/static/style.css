@@ -13,17 +13,21 @@
 
 html {
     scroll-behavior: smooth;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
     background-color: var(--main-bg-color) !important;
     font-family: 'Raleway', sans-serif;
     color: var(--text-primary-color);
+    margin-bottom: 106px;
 }
 
 h1, h2 {
     font-family: 'Audiowide', cursive;
     text-transform: lowercase;
+    text-align: center;
 }
 
 a, a:hover {
@@ -32,9 +36,14 @@ a, a:hover {
 }
 
 footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 106px;
     background-color: var(--darker-bg-color);
     color: rgba(255, 255, 255, .5);
     font-size: 10pt;
+    padding: 16px;
 }
 
 footer .icon-box {
@@ -70,11 +79,33 @@ footer .icon-box:hover {
     color: white;
     padding: 6px 12px;
     transition: 0.3s;
+    cursor: pointer;
 }
 
 .btn-custom-outline:hover {
     background-color: var(--accent-color);
     border-color: var(--accent-color);
+}
+
+.btn-custom-form {
+    border: 1px var(--dark-bg-color) solid;
+    color: var(--dark-bg-color);
+    background-color: transparent;
+    padding: 6px 12px;
+    transition: 0.3s;
+    cursor: pointer;
+    float: right;
+    border-radius: 0 !important;
+}
+
+.btn-custom-form:hover {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: white;
+}
+
+.custom-form textarea, input {
+    border-radius: 0 !important;
 }
 
 .btn-custom {

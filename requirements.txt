@@ -1,5 +1,6 @@
 certifi==2019.3.9
 Django==2.1.5
+django-crispy-forms==1.7.2
 django-taggit==0.24.0
 django-webp-converter==0.1.2
 gunicorn==19.9.0
