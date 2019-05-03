@@ -15,4 +15,8 @@ def projects(request):
 
 def job_detail(request, slug):
     job = get_object_or_404(Job, slug=slug)
-    return render(request, 'jobs/detail.html', {'job': job})
+    if job.title == "Keyword Wrapper":
+        template = 'jobs/keyword-wrapper.html'
+    else:
+        template = 'jobs/detail.html'
+    return render(request, template, {'job': job})
