@@ -9,12 +9,12 @@
 
     <main role="main">
 
-        <div class="container py-4">
-            <h1 class="text-center audiowide">Portfolio</h1>
+        <div class="container py-5">
+            <h1 class="text-center">Portfolio</h1>
 
             <div class="row py-5">
                 {% for job in latest_jobs.all %}
-                    <div class="col-md-6 job-display">
+                    <div class="col-md-4 job-display">
                         <a href="{% url 'job_detail' job.slug %}">
                             <img class="img-fluid overlay-image" src="{{ job.portfolio_image.url }}">
                             <div class="overlay-middle">

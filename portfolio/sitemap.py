@@ -13,7 +13,7 @@ class JobSitemap(Sitemap):
 class StaticSitemap(Sitemap):
 
     def items(self):
-        return ['home']
+        return ['home', 'contact', 'projects']
 
     def location(self, item):
         return reverse(item)
