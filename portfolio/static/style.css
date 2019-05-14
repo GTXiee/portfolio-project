@@ -104,7 +104,7 @@ footer .icon-box:hover {
     color: white;
 }
 
-.custom-form textarea, input {
+input {
     border-radius: 0 !important;
 }
 
@@ -206,3 +206,12 @@ footer .icon-box:hover {
 .job-display:hover .overlay-middle {
     opacity: 1;
 }
+
+.kw-inputs textarea {
+    width: 100%;
+    padding: 0 10px;
+}
+
+
+
+
