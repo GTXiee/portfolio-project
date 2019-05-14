@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 
-{% block title %}Google Keyword Wrapper Tool | George Christie Development{% endblock %}
-{% block description %}A simple AdWords keyword wrapper tool to help speed up the creation of your PPC campaigns.{% endblock %}
+{% block title %}Keyword Wrapper & Combination Tool | George Christie Development{% endblock %}
+{% block description %}Combine lists of keywords and choose your match types. This swiss army knife of keyword tools
+    will help speed up the creation of your PPC campaigns.{% endblock %}
 
 {% block content %}
 
@@ -13,46 +14,71 @@
         </section>
 
         <section class="container py-3">
-            <div class="row text-center justify-content-center pb-2">
-                <div class="col-md-10 col-lg-6">
-                    <p class="text-center">Speed up the creation of your Google Ads and PPC campaigns with this simple
-                        keyword wrapper tool.</p>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-10 col-sm-8 col-lg-5 d-flex justify-content-between">
-                    <label for="broad-checkbox">
-                        <input id="broad-checkbox" checked="checked" name="match-types" type="checkbox"/>Broad</label>
-                    <label for="phrase-checkbox">
-                        <input id="phrase-checkbox" name="match-types" type="checkbox"/> Phrase</label>
-                    <label for="exact-checkbox">
-                        <input id="exact-checkbox" name="match-types" type="checkbox"/> Exact</label>
-                    <label for="bmm-checkbox">
-                        <input id="bmm-checkbox" name="match-types" type="checkbox"/> BMM</label>
-                </div>
-
-            </div>
-
             <div class="row justify-content-center">
                 <div class="col-md-10 col-lg-6">
-                    <textarea id="input-text-1" class="w-100" rows="12" placeholder="Keyword List"></textarea>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-11 col-lg-9">
-                    <button id="btn-process" class="btn-custom-form">Process</button>
+                    <div class="row pb-3">
+                        <div class="col">
+                            <p>Speed up the creation of your Google Ads and PPC campaigns with this
+                                keyword wrapper tool. Choose the match types you desire and generate
+                                a new list of keywords.
+                            <p>This tool also doubles up as a keyword permutation generator, allowing you to concatenate
+                                lists of keywords to deliver all the combinations.</p>
+                        </div>
+                    </div>
 
-                </div>
-            </div>
-            <div class="row justify-content-center mt-3">
-                <div class="col-md-10 col-lg-6">
+                    <div class="row justify-content-center pb-4">
+                        <div class="text-center">
+                            Number of combinations:
+                            <select id="combination-select">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-center">
+                        <div class="col-10 col-lg-9 d-flex justify-content-between">
+                            <label for="broad-checkbox">
+                                <input id="broad-checkbox" class="rounded-0" checked="checked" name="match-types"
+                                       type="checkbox"/> Broad</label>
+                            <label for="phrase-checkbox">
+                                <input id="phrase-checkbox" name="match-types" type="checkbox"/> Phrase</label>
+                            <label for="exact-checkbox">
+                                <input id="exact-checkbox" name="match-types" type="checkbox"/> Exact</label>
+                            <label for="bmm-checkbox">
+                                <input id="bmm-checkbox" name="match-types" type="checkbox"/> BMM</label>
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-center kw-inputs">
+                        <div class="col" id="kw-col-1">
+                            <textarea id="input-text-1" rows="10" placeholder="Keyword List"></textarea>
+                        </div>
+                        <div class="col" id="kw-col-2" style="display: none">
+                            <textarea id="input-text-2" rows="10" placeholder="Keyword List"></textarea>
+                        </div>
+                        <div class="col" id="kw-col-3" style="display: none">
+                            <textarea id="input-text-3" rows="10" placeholder="Keyword List"></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <button id="btn-process" class="btn-custom-form">Process</button>
+
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col">
                             <textarea id="output-text" class="w-100" readonly="readonly" rows="12"
                                       placeholder="Output"></textarea>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-11 col-lg-9">
-                    <button id="btn-copy" class="btn-custom-form">Copy to Clipboard</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <button id="btn-copy" class="btn-custom-form">Copy to Clipboard</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
