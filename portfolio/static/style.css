@@ -212,6 +212,12 @@ input {
     padding: 0 10px;
 }
 
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+}
+
 
 
 
