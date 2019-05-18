@@ -31,7 +31,7 @@
                     <div class="row justify-content-center pb-4">
                         <div class="text-center">
                             Number of combinations:
-                            <select id="combination-select">
+                            <select id="combination-select" aria-label="Number of combinations">
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -55,24 +55,23 @@
 
                     <div class="row justify-content-center kw-inputs">
                         <div class="col" id="kw-col-1">
-                            <textarea id="input-text-1" rows="10" placeholder="Keyword List"></textarea>
+                            <textarea id="input-text-1" aria-label="Keyword list 1" rows="10" placeholder="Keyword List"></textarea>
                         </div>
                         <div class="col" id="kw-col-2" style="display: none">
-                            <textarea id="input-text-2" rows="10" placeholder="Keyword List"></textarea>
+                            <textarea id="input-text-2" aria-label="Keyword list 2" rows="10" placeholder="Keyword List"></textarea>
                         </div>
                         <div class="col" id="kw-col-3" style="display: none">
-                            <textarea id="input-text-3" rows="10" placeholder="Keyword List"></textarea>
+                            <textarea id="input-text-3" aria-label="Keyword list 3" rows="10" placeholder="Keyword List"></textarea>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col">
                             <button id="btn-process" class="btn-custom-form">Process</button>
-
                         </div>
                     </div>
                     <div class="row mt-3">
                         <div class="col">
-                            <textarea id="output-text" class="w-100" readonly="readonly" rows="12"
+                            <textarea id="output-text" class="w-100" aria-label="Output text" readonly="readonly" rows="12"
                                       placeholder="Output"></textarea>
                         </div>
                     </div>
