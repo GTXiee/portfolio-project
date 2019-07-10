@@ -11,6 +11,10 @@
     --text-primary-color: #212529;
 }
 
+@font-face {
+    font-family: Calibri;
+}
+
 html {
     scroll-behavior: smooth;
     position: relative;
@@ -25,7 +29,7 @@ body {
 }
 
 h1, h2 {
-    font-family: 'Audiowide', cursive;
+    font-family: 'Merriweather', serif;
     text-transform: lowercase;
     text-align: center;
 }
@@ -63,6 +67,10 @@ footer .icon-box i {
 
 footer .icon-box:hover {
     transform: scale(0.9);
+}
+
+.p-mb-0 p {
+    margin-bottom: 0;
 }
 
 .text-accent {
