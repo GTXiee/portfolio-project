@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
 from django.utils.text import slugify
+from django.utils.html import format_html
 
 from taggit.managers import TaggableManager
 
@@ -21,4 +22,3 @@ class Job(models.Model):
 
     def get_absolute_url(self):
         return reverse('job_detail', args=[str(self.slug)])
-

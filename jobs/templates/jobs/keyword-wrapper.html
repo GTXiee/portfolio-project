@@ -2,8 +2,7 @@
 {% load staticfiles %}
 
 {% block title %}Keyword Wrapper & Combination Tool | George Christie Development{% endblock %}
-{% block description %}Combine lists of keywords and choose your match types. This swiss army knife of keyword tools
-    will help speed up the creation of your PPC campaigns.{% endblock %}
+{% block description %}Combine lists of keywords and choose your match types. This swiss army knife of keyword tools will help speed up the creation of your PPC campaigns.{% endblock %}
 
 {% block content %}
 
@@ -15,14 +14,10 @@
 
         <section class="container py-3">
             <div class="row justify-content-center">
-                <div class="col-md-10 col-lg-6">
-                    <div class="row">
+                <div class="col-md-10 col-lg-7">
+                    <div class="row p-mb-0">
                         <div class="col">
-                            <p>Speed up the creation of your Google Ads and PPC campaigns with this
-                                keyword wrapper tool. Choose the match types you desire and generate
-                                a new list of keywords.
-                            <p class="mb-0">This tool also doubles up as a keyword permutation generator, allowing you to concatenate
-                                lists of keywords to deliver all the combinations.</p>
+                            {{ job.body|safe }}
                         </div>
                     </div>
 

@@ -8,20 +8,6 @@
 
     <main role="main">
 
-        {#        <section class="container-fluid top-half">#}
-        {#            <div class="row h-100">#}
-        {#                <div class="col my-auto text-center">#}
-        {#                    <h1 class="h2 text-light raleway">Hello, I'm <b class="text-accent">George Christie</b>.<br>#}
-        {#                        I'm a self-taught Django developer.</h1>#}
-        {#                    <a href="#portfolio">#}
-        {#                        <div class="btn-custom-outline mt-2">View my work</div>#}
-        {#                    </a>#}
-        {#                </div>#}
-        {##}
-        {#            </div>#}
-        {##}
-        {#        </section>#}
-
         <section class="hero">
             <div class="container-fluid h-100">
                 <div class="row h-100">
@@ -36,15 +22,14 @@
             </div>
         </section>
 
-
         <section class="bg-light">
             <div class="container py-5">
-                <h2 class="audiowide text-center">About</h2>
+                <h2 class="audiowide">About</h2>
                 <div class="row justify-content-center align-items-center">
                     <div class="col-md-6 col-lg-4 text-center py-3">
                         <img class="img" src="{% static_webp 'bio-pic-round-300.png' %}" alt="Bio picture"/>
                     </div>
-                    <div class="col-md-6 col-lg-4 text-center">
+                    <div class="col-md-6 col-lg-4">
                         <p>I'm currently a Senior Digital Marketing executive at upriseUP in Chesham. During my time
                             here I have discovered a love of coding after creating scripts to automate tasks. With a
                             strong understanding in Technical SEO, I know the practices to ensure that a website is
@@ -61,18 +46,10 @@
             <div class="portfolio py-5 portfolio-section" id="portfolio">
                 <div class="container">
                     <h2 class="audiowide text-center pb-4">Projects</h2>
-
                     <div class="row">
-
                         {% for job in latest_jobs.all %}
                             <div class="col-md-6 col-lg-4 job-display">
                                 <a href="{% url 'job_detail' job.slug %}">
-                                    {#                                <div class="card mb-4 shadow-sm">#}
-                                    {#                                    <img class="card-img-top" src="{{ job.image.url }}"/>#}
-                                    {#                                    <div class="card-body">#}
-                                    {#                                        <p class="card-text">{{ job.summary }}</p>#}
-                                    {#                                    </div>#}
-                                    {#                                </div>#}
                                     <img class="img-fluid overlay-image" src="{{ job.portfolio_image.url }}">
                                     <div class="overlay-middle">
                                         <h3 class="h5 font-weight-bold">{{ job.title }}</h3>
