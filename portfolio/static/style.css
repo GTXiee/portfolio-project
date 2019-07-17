@@ -224,6 +224,10 @@ input {
     .hero h1 {
         font-size: 1.5rem;
     }
+
+    #home-bio {
+        text-align: center;
+    }
 }
 
 
