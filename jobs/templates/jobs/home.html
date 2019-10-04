@@ -30,10 +30,12 @@
                         <img class="img" src="{% static_webp 'bio-pic-round-300.png' %}" alt="Bio picture"/>
                     </div>
                     <div class="col-md-6 col-lg-4">
-                        <p id="home-bio">I'm currently a Senior Digital Marketing executive at upriseUP in Chesham. During my time
+                        <p id="home-bio">I'm currently a Senior Digital Marketing executive at upriseUP in Chesham.
+                            During my time
                             here I have discovered a love of coding after creating scripts to automate tasks. With a
                             strong understanding in Technical SEO, I know the practices to ensure that a website is
-                            built correctly to maximise it's outreach and performance. After playing with a few languages and
+                            built correctly to maximise it's outreach and performance. After playing with a few
+                            languages and
                             frameworks over the past year I have landed on Django due to it's power and simplicity.
                         </p>
                     </div>
@@ -46,14 +48,16 @@
             <div class="portfolio py-5 portfolio-section" id="portfolio">
                 <div class="container">
                     <h2 class="audiowide text-center pb-4">Projects</h2>
-                    <div class="row">
+                    <div class="row no-gutters">
                         {% for job in latest_jobs.all %}
-                            <div class="col-md-6 col-lg-4 job-display">
-                                <a href="{% url 'job_detail' job.slug %}">
-                                    <img class="img-fluid overlay-image" src="{{ job.portfolio_image.url }}">
-                                    <div class="overlay-middle">
-                                        <h3 class="h5 font-weight-bold">{{ job.title }}</h3>
-                                        <p>{{ job.summary }}</p>
+                            <div class="col-md-6 col-lg-4">
+                                <a href="{% url 'job_detail' job.url_slug %}">
+                                    <div class="job-display">
+                                        <img class="img-fluid overlay-image" src="{{ job.portfolio_image.url }}">
+                                        <div class="overlay-middle">
+                                            <h3 class="h5 font-weight-bold">{{ job.title }}</h3>
+                                            <p>{{ job.summary }}</p>
+                                        </div>
                                     </div>
                                 </a>
                             </div>

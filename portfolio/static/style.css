@@ -69,6 +69,15 @@ footer .icon-box:hover {
     transform: scale(0.9);
 }
 
+.no-indent-ul {
+    list-style-position: inside;
+    padding-left: 0;
+}
+
+.sep-left {
+    border-left: 1px grey solid;
+}
+
 .p-mb-0 p {
     margin-bottom: 0;
 }
