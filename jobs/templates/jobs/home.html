@@ -45,18 +45,18 @@
         </section>
 
         <section>
-            <div class="portfolio py-5 portfolio-section" id="portfolio">
+            <div class="portfolio pt-5 portfolio-section" id="portfolio">
                 <div class="container">
                     <h2 class="audiowide text-center pb-4">Projects</h2>
-                    <div class="row no-gutters">
-                        {% for job in latest_jobs.all %}
-                            <div class="col-md-6 col-lg-4">
-                                <a href="{% url 'job_detail' job.url_slug %}">
+                    <div class="row">
+                        {% for job_info in job_data %}
+                            <div class="col-md-6 col-lg-4 mb-3">
+                                <a href="{% url 'job_detail' job_info.job.url_slug %}">
                                     <div class="job-display">
-                                        <img class="img-fluid overlay-image" src="{{ job.portfolio_image.url }}">
+                                        <img class="img-fluid overlay-image" src="{{ job_info.image.url }}">
                                         <div class="overlay-middle">
-                                            <h3 class="h5 font-weight-bold">{{ job.title }}</h3>
-                                            <p>{{ job.summary }}</p>
+                                            <h3 class="h5 font-weight-bold">{{ job_info.job.title }}</h3>
+                                            <p>{{ job_info.job.summary }}</p>
                                         </div>
                                     </div>
                                 </a>
@@ -66,7 +66,6 @@
                 </div>
             </div>
         </section>
-
 
     </main>
 

@@ -78,6 +78,12 @@ footer .icon-box:hover {
     border-left: 1px grey solid;
 }
 
+@media (max-width: 992px) {
+    .sep-left {
+        border: 0;
+    }
+}
+
 .p-mb-0 p {
     margin-bottom: 0;
 }

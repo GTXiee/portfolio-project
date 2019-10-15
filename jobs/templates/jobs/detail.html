@@ -11,7 +11,7 @@
             <h1 class="text-center">{{ job.title }}</h1>
         </section>
 
-        <section class="container py-3">
+        <section class="container py-4">
             {% if job.body %}
                 <div class="row justify-content-center">
                     <div class="col-12 col-lg-8">
@@ -21,9 +21,9 @@
                     <div class="col-12 col-lg-2 sep-left">
                         <h2 class="h4 text-left">technology</h2>
                         <ul class="no-indent-ul">
-                            <li>Python</li>
-                            <li>Django</li>
-                            <li>PostgreSQL</li>
+                            {% for tech in job.technologies %}
+                                <li>{{ tech }}</li>
+                            {% endfor %}
                         </ul>
                     </div>
                 </div>
@@ -41,13 +41,20 @@
                         </div>
                     </div>
                 {% endif %}
-                {% if job.display_image %}
+                {#                {% if job.display_image %}#}
+                {#                    <div class="row justify-content-center pt-4">#}
+                {#                        <div class="col-12 col-md-10 col-lg-10">#}
+                {#                            <img class="img-fluid" src="{{ job.display_image.url }}"/>#}
+                {#                        </div>#}
+                {#                    </div>#}
+                {#                {% endif %}#}
+                {% for image in images %}
                     <div class="row justify-content-center pt-4">
                         <div class="col-12 col-md-10 col-lg-10">
-                            <img class="img-fluid" src="{{ job.display_image.url }}"/>
+                            <img class="img-fluid" src="{{ image.image.url }}"/>
                         </div>
                     </div>
-                {% endif %}
+                {% endfor %}
             {% else %}
                 <div class="row justify-content-center pt-4">
                     <div class="col-12 col-md-10 col-lg-8">
