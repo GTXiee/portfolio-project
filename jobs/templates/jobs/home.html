@@ -2,6 +2,29 @@
 
 {% load webp_converter %}
 
+{% block head_info %}
+    <!-- Structured data --->
+    <script type='application/ld+json'>
+        {
+            "@context": "http://www.schema.org",
+            "@type": "person",
+            "name": "George Christie",
+            "gender": "Male",
+            "url": "https://georgechristie.dev/",
+            "sameAs": [
+                "https://www.linkedin.com/in/george-christie/",
+                "https://github.com/GTXiee"
+            ],
+            "image": "https://georgechristie.dev/static/bio-pic-round-300.png",
+            "alumniOf": {
+                "@type": "CollegeOrUniversity",
+                "name": "University of East Anglia",
+                "sameAs": "https://www.uea.ac.uk/"
+            }
+        }
+    </script>
+{% endblock %}
+
 {% block content %}
 
     {% load staticfiles %}
