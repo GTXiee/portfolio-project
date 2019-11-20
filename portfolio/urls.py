@@ -5,7 +5,6 @@ from django.conf.urls.static import static
 from django.contrib.sitemaps.views import sitemap
 
 import jobs.views
-import portfolio.views
 
 from .sitemap import JobSitemap, StaticSitemap
 
@@ -15,10 +14,16 @@ sitemaps = {
 }
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', jobs.views.home, name='home'),
+
+    # admin
+    path('gc_admin/', admin.site.urls),
+
+    # apps
     path('contact/', include('contact.urls')),
     path('portfolio/', include('jobs.urls')),
+    path('', jobs.views.home, name='home'),
+
+    # sitemap
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='sitemap'),
-    # path('blog/', include('blog.urls')),
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

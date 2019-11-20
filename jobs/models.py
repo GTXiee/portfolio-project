@@ -11,7 +11,7 @@ from taggit.managers import TaggableManager
 
 class Job(models.Model):
     title = models.CharField(max_length=200, default='change me')
-    url_slug = models.SlugField(max_length=50)
+    url_slug = models.SlugField(max_length=50, unique=True)
     link_to_project = models.URLField(max_length=200, blank=True)
     summary = models.CharField(max_length=200)
     body = models.TextField(blank=True)

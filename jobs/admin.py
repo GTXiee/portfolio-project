@@ -15,6 +15,7 @@ class JobAdmin(admin.ModelAdmin):
     inlines = [
         JobImageInline,
     ]
+    prepopulated_fields = {'url_slug': ('title',)}
 
 
 admin.site.register(Job, JobAdmin)

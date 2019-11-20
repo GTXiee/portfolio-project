@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
 
 {% load webp_converter %}
+{% load static %}
 
 {% block head_info %}
-    <!-- Structured data --->
+    <!-- Structured data -->
     <script type='application/ld+json'>
         {
             "@context": "http://www.schema.org",
@@ -26,8 +27,6 @@
 {% endblock %}
 
 {% block content %}
-
-    {% load staticfiles %}
 
     <main role="main">
 
