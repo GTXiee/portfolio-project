@@ -16,12 +16,12 @@ sitemaps = {
 urlpatterns = [
 
     # admin
-    path('gc_admin/', admin.site.urls),
+    path('gc-admin/', admin.site.urls),
 
     # apps
+    path('', include('pages.urls')),
     path('contact/', include('contact.urls')),
     path('portfolio/', include('jobs.urls')),
-    path('', jobs.views.home, name='home'),
 
     # sitemap
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='sitemap'),

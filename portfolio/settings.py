@@ -20,6 +20,7 @@ INSTALLED_APPS = [
     'crispy_forms',
 
     # Local apps
+    'pages.apps.PagesConfig',
     'jobs.apps.JobsConfig',
     'contact.apps.ContactConfig',
 

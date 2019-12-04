@@ -12,11 +12,6 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.AddField(
-            model_name='jobimage',
-            name='type',
-            field=models.CharField(choices=[('TN', 'Thumbnail'), ('DS', 'Display')], default='DS', max_length=2),
-        ),
         migrations.AlterField(
             model_name='job',
             name='date_created',

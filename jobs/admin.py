@@ -6,7 +6,7 @@ from .models import Job, JobImage
 # Defines inline JobImage object
 class JobImageInline(admin.TabularInline):
     model = JobImage
-    fields = ('image', 'type', 'order')
+    fields = ('image', 'is_thumbnail', 'order')
     extra = 0
 
 
@@ -16,6 +16,7 @@ class JobAdmin(admin.ModelAdmin):
         JobImageInline,
     ]
     prepopulated_fields = {'url_slug': ('title',)}
+
 
 
 admin.site.register(Job, JobAdmin)

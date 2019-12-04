@@ -30,61 +30,55 @@
 
     <main role="main">
 
-        <section class="hero">
-            <div class="container-fluid h-100">
-                <div class="row h-100">
-                    <div class="col my-auto text-center">
-                        <h1 class="h2 text-light raleway">Hello, I'm <b class="text-accent">George Christie</b>.<br>
-                            I'm a self-taught Django developer.</h1>
-                        <a href="#portfolio">
-                            <div class="btn-custom-outline mt-2">View my work</div>
-                        </a>
-                    </div>
+        <header class="home-hero container-fluid">
+            <div class="row h-100">
+                <div class="col my-auto">
+                    <h1>Hello, I'm <b class="text-accent">George Christie</b>.<br>
+                        I'm a self-taught Django developer.</h1>
+                    <a href="#portfolio">
+                        <div class="btn-custom-outline mt-2">View my work</div>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <section class="home-bio container py-5">
+            <h2>About</h2>
+            <div class="row justify-content-center align-items-center">
+                <div class="col-md-6 col-lg-4 py-3 text-center">
+                    <img class="img" src="{% static_webp 'pages/images/bio-pic-round-300.png' %}"
+                         alt="George Christie"/>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <p>I'm currently a Senior Digital Marketing executive at upriseUP in Chesham.
+                        During my time
+                        here I have discovered a love of coding after creating scripts to automate tasks. With a
+                        strong understanding in Technical SEO, I know the practices to ensure that a website is
+                        built correctly to maximise it's outreach and performance. After playing with a few
+                        languages and
+                        frameworks over the past year I have landed on Django due to it's power and simplicity.
+                    </p>
                 </div>
             </div>
         </section>
 
-        <section class="bg-light">
-            <div class="container py-5">
-                <h2 class="audiowide">About</h2>
-                <div class="row justify-content-center align-items-center">
-                    <div class="col-md-6 col-lg-4 py-3 text-center">
-                        <img class="img" src="{% static_webp 'bio-pic-round-300.png' %}" alt="Bio picture"/>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <p id="home-bio">I'm currently a Senior Digital Marketing executive at upriseUP in Chesham.
-                            During my time
-                            here I have discovered a love of coding after creating scripts to automate tasks. With a
-                            strong understanding in Technical SEO, I know the practices to ensure that a website is
-                            built correctly to maximise it's outreach and performance. After playing with a few
-                            languages and
-                            frameworks over the past year I have landed on Django due to it's power and simplicity.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-        <section>
-            <div class="portfolio pt-5 portfolio-section" id="portfolio">
-                <div class="container">
-                    <h2 class="audiowide text-center pb-4">Projects</h2>
-                    <div class="row">
-                        {% for job_info in job_data %}
-                            <div class="col-md-6 col-lg-4 mb-3">
-                                <a href="{% url 'job_detail' job_info.job.url_slug %}">
-                                    <div class="job-display">
-                                        <img class="img-fluid overlay-image" src="{{ job_info.image.url }}">
-                                        <div class="overlay-middle">
-                                            <h3 class="h5 font-weight-bold">{{ job_info.job.title }}</h3>
-                                            <p>{{ job_info.job.summary }}</p>
-                                        </div>
+        <section class="home-portfolio py-5" id="portfolio">
+            <div class="container">
+                <h2 class="pb-4">Projects</h2>
+                <div class="row">
+                    {% for job_i in job_data %}
+                        <div class="col-md-6 col-lg-4 mb-3">
+                            <a href="{{ job_i.job.get_absolute_url }}">
+                                <div class="job-display">
+                                    <img class="img-fluid overlay-image" src="{{ job_i.image.url }}">
+                                    <div class="overlay-middle">
+                                        <h3 class="h5 font-weight-bold">{{ job_i.job.title }}</h3>
+                                        <p>{{ job_i.job.summary }}</p>
                                     </div>
-                                </a>
-                            </div>
-                        {% endfor %}
-                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    {% endfor %}
                 </div>
             </div>
         </section>

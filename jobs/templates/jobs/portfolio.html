@@ -10,19 +10,19 @@
             <h1 class="text-center">Portfolio</h1>
 
             <div class="row pt-4">
-                        {% for job_info in job_data %}
-                            <div class="col-md-6 pb-3">
-                                <a href="{% url 'job_detail' job_info.job.url_slug %}">
-                                    <div class="job-display">
-                                        <img class="img-fluid overlay-image" src="{{ job_info.image.url }}">
-                                        <div class="overlay-middle">
-                                            <h3 class="h5 font-weight-bold">{{ job_info.job.title }}</h3>
-                                            <p>{{ job_info.job.summary }}</p>
-                                        </div>
+                        {% for job_i in job_data %}
+                        <div class="col-md-6 col-lg-4 mb-3">
+                            <a href="{{ job_i.job.get_absolute_url }}">
+                                <div class="job-display">
+                                    <img class="img-fluid overlay-image" src="{{ job_i.image.url }}">
+                                    <div class="overlay-middle">
+                                        <h3 class="h5 font-weight-bold">{{ job_i.job.title }}</h3>
+                                        <p>{{ job_i.job.summary }}</p>
                                     </div>
-                                </a>
-                            </div>
-                        {% endfor %}
+                                </div>
+                            </a>
+                        </div>
+                    {% endfor %}
                     </div>
         </div>
 

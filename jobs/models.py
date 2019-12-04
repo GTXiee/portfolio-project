@@ -33,22 +33,18 @@ class Job(models.Model):
 
 
 class JobImage(models.Model):
-    IMAGE_TYPE_CHOICES = [
-        ('TN', 'Thumbnail'),
-        ('DS', 'Display'),
-    ]
-
-    job = models.ForeignKey(Job, on_delete=models.CASCADE)
-    type = models.CharField(
-        max_length=2,
-        choices=IMAGE_TYPE_CHOICES,
-        default='DS',
-    )
+    job_linked = models.ForeignKey(Job, on_delete=models.CASCADE)
     image = models.ImageField(upload_to='images/')
+    is_thumbnail = models.BooleanField(default=None, null=True, blank=True)
+    order = models.IntegerField()
 
-    order = models.IntegerField(
-        choices=[(i, i) for i in range(4)],
-    )
+    class Meta:
+        unique_together = (('job_linked', 'order'), ('job_linked', 'is_thumbnail'))
+
+    def save(self, *args, **kwargs):
+        if self.is_thumbnail is False:
+            self.is_thumbnail = None
+        super(JobImage, self).save(*args, **kwargs)
 
     def __str__(self):
         return self.image.name

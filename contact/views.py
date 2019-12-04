@@ -7,7 +7,7 @@ from .models import Contact
 from .forms import ContactForm
 
 
-def contact(request):
+def contact_page(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
@@ -29,11 +29,11 @@ def contact(request):
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
         else:
-            return render(request, 'contact/contact_form.html', {'form': form})
+            return render(request, 'contact/contact_page.html', {'form': form})
     else:
         form = ContactForm()
-        return render(request, 'contact/contact_form.html', {'form': form})
+        return render(request, 'contact/contact_page.html', {'form': form})
 
 
-def thanks(request):
-    return render(request, 'contact/thanks.html')
+def thanks_page(request):
+    return render(request, 'contact/thanks_page.html')
