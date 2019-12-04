@@ -29,39 +29,31 @@
                 </div>
             {% endif %}
 
-            {% if job.completed %}
-                {% if job.link_to_project %}
-                    <div class="row justify-content-center">
-                        <div class="col-12 col-md-10 col-lg-8">
-                            <a href={{ job.link_to_project }}>
-                                <div class="text-uppercase btn-custom">
-                                    <i class="material-icons">open_in_new</i> View Site
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                {% endif %}
-                {#                {% if job.display_image %}#}
-                {#                    <div class="row justify-content-center pt-4">#}
-                {#                        <div class="col-12 col-md-10 col-lg-10">#}
-                {#                            <img class="img-fluid" src="{{ job.display_image.url }}"/>#}
-                {#                        </div>#}
-                {#                    </div>#}
-                {#                {% endif %}#}
-                {% for image in images %}
-                    <div class="row justify-content-center pt-4">
-                        <div class="col-12 col-md-10 col-lg-10">
-                            <img class="img-fluid" src="{{ image.image.url }}"/>
-                        </div>
-                    </div>
-                {% endfor %}
-            {% else %}
-                <div class="row justify-content-center pt-4">
+            {% if job.link_to_project %}
+                <div class="row justify-content-center">
                     <div class="col-12 col-md-10 col-lg-8">
-                        <img class="img-fluid" src="{% static 'page-not-live.png' %}"/>
+                        <a href={{ job.link_to_project }}>
+                            <div class="text-uppercase btn-custom">
+                                <i class="material-icons">open_in_new</i> View Site
+                            </div>
+                        </a>
                     </div>
                 </div>
             {% endif %}
+            {#                {% if job.display_image %}#}
+            {#                    <div class="row justify-content-center pt-4">#}
+            {#                        <div class="col-12 col-md-10 col-lg-10">#}
+            {#                            <img class="img-fluid" src="{{ job.display_image.url }}"/>#}
+            {#                        </div>#}
+            {#                    </div>#}
+            {#                {% endif %}#}
+            {% for image in images %}
+                <div class="row justify-content-center pt-4">
+                    <div class="col-12 col-md-10 col-lg-10">
+                        <img class="img-fluid" src="{{ image.image.url }}"/>
+                    </div>
+                </div>
+            {% endfor %}
 
 
         </section>

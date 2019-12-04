@@ -21,4 +21,4 @@ class HomepageTests(TestCase):
 
     def test_homepage_resolves_url(self):
         view = resolve('/')
-        self.assertEqual(view.func, views.home)
+        self.assertEqual(view.func.__name__, views.HomepageView.as_view().__name__)
