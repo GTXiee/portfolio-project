@@ -6,8 +6,6 @@ from datetime import datetime
 
 from . import views
 
-import mock
-
 from .models import Job, JobImage
 from taggit.models import Tag
 
