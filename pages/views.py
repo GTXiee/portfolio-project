@@ -28,7 +28,7 @@ class HomepageView(TemplateView):
             # Will throw error if more than thumbnail image
             try:
                 image = JobImage.objects.get(job_linked=job.id, is_thumbnail=True).image
-            except:
+            except Job.DoesNotExist:
                 image = None
             job_data.append({
                 'job': job,
