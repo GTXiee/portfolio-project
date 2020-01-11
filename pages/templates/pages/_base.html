@@ -6,24 +6,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>{% block title %}George Christie Development{% endblock %}</title>
-    <meta name="description" content="{% block description %}I am a self-taught web developer, specialising in the Django framework.{% endblock %}">
+    <meta name="description"
+          content="{% block description %}I am a self-taught web developer, specialising in the Django framework.{% endblock %}">
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
           integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Raleway|Merriweather|Audiowide|Material+Icons&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
-          integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-
-    <!-- Custom js -->
-    <script>  document.documentElement.classList.remove("no-js")</script>
-    <script src="{% static 'js/modernizr-custom.js' %}"></script>
-    {% block javascript %}{% endblock %}
-
 
     <!-- Custom css -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-
 
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon/apple-touch-icon.png' %}">
@@ -41,6 +32,11 @@
 
     {% block head_info %}
     {% endblock %}
+
+    <!-- Custom js -->
+    <script>  document.documentElement.classList.remove("no-js")</script>
+    <script src="{% static 'js/modernizr-custom.js' %}"></script>
+    {% block javascript %}{% endblock %}
 
     <!-- Google Tag Manager -->
     <script>(function (w, d, s, l, i) {
@@ -61,6 +57,7 @@
 </head>
 
 <body>
+
 <!-- Google Tag Manager (noscript) -->
 <noscript>
     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5TCBGMG"
@@ -71,7 +68,6 @@
 <div class="content">
     <header>
         <nav class="navbar navbar-expand-sm navbar-dark navbar-custom px-4">
-            {#        <a class="navbar-brand" href="{% url 'home' %}">George Christie Development</a>#}
             <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse"
                     data-target="#navbarNavAltMarkup"
                     aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -99,12 +95,13 @@
         <div class="row justify-content-center">
             <a href="https://github.com/GTXiee" aria-label="Link to my Github account" rel="noopener" target="_blank">
                 <div class="icon-box">
-                    <i class="fab fa-github"></i>
+                    <img class="icon-svg" src="{% static 'pages/images/github-logo.svg' %}" alt="Github logo">
                 </div>
             </a>
-            <a href="https://www.linkedin.com/in/george-christie/" aria-label="Link to my LinkedIn" rel="noopener" target="_blank">
+            <a href="https://www.linkedin.com/in/george-christie/" aria-label="Link to my LinkedIn" rel="noopener"
+               target="_blank">
                 <div class="icon-box">
-                    <i class="fab fa-linkedin-in"></i>
+                    <img class="icon-svg" src="{% static 'pages/images/linkedin-logo.svg' %}" alt="LinkedIn logo">
                 </div>
             </a>
 
@@ -116,12 +113,12 @@
 </div>
 
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
-        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-        crossorigin="anonymous"></script>
+{#<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"#}
+{#        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"#}
+{#        crossorigin="anonymous"></script>#}
+{#<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"#}
+{#        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"#}
+{#        crossorigin="anonymous"></script>#}
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
         integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
         crossorigin="anonymous"></script>

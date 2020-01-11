@@ -17,6 +17,24 @@ html {
     min-height: 100%;
 }
 
+@font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: normal;
+    font-display: swap;
+    src: local('Raleway'),
+        url('../fonts/Raleway-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Merriweather';
+    font-style: normal;
+    font-weight: normal;
+    font-display: swap;
+    src: local('Merriweather'),
+        url('../fonts/Merriweather-Regular.ttf') format('truetype');
+}
+
 body {
     background-color: var(--main-bg-color) !important;
     font-family: 'Raleway', sans-serif;
@@ -46,12 +64,14 @@ footer .icon-box {
     transition-duration: 0.3s;
 }
 
-footer .icon-box i {
-    font-size: 14pt;
-}
-
 footer .icon-box:hover {
     transform: scale(0.9);
+}
+
+footer .icon-svg {
+    width: 40%;
+    height: 40%;
+    filter: invert(100%) opacity(50%);
 }
 
 h1, h2 {
