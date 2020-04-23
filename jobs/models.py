@@ -3,7 +3,6 @@ from django.urls import reverse
 from django.utils.text import slugify
 from django.utils.html import format_html
 from django.utils import timezone
-from django.contrib.postgres.fields import ArrayField
 from django.utils.safestring import mark_safe
 
 from taggit.managers import TaggableManager
@@ -15,12 +14,12 @@ class Job(models.Model):
     link_to_project = models.URLField(max_length=200, blank=True)
     summary = models.CharField(max_length=200)
     body = models.TextField(blank=True)
-    technologies = ArrayField(
-        models.CharField(
-            max_length=50,
-        ),
-        null=True
-    )
+    # technologies = ArrayField(
+    #     models.CharField(
+    #         max_length=50,
+    #     ),
+    #     null=True
+    # )
     tags = TaggableManager(blank=True)
     date_created = models.DateField(default=timezone.now)
     completed = models.BooleanField(default=False)
