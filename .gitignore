@@ -20,3 +20,7 @@ db.sqlite3
 robots.txt
 requirements.txt
 .venv/
+
+### Production ###
+passenger_wsgi.py
+tmp
