@@ -33,7 +33,7 @@ class Job(models.Model):
 
 class JobImage(models.Model):
     job_linked = models.ForeignKey(Job, on_delete=models.CASCADE)
-    image = models.ImageField(upload_to='images/')
+    image = models.ImageField(upload_to='images/jobimages/')
     is_thumbnail = models.BooleanField(default=None, null=True, blank=True)
     order = models.IntegerField()
 

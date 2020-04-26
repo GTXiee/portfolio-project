@@ -19,8 +19,8 @@ INSTALLED_APPS = [
 
     # Third party apps
     'taggit',
-    'webp_converter',
     'crispy_forms',
+    'storages',
 
     # Local apps
     'pages.apps.PagesConfig',
@@ -53,7 +53,6 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'webp_converter.context_processors.webp_support',  # webp conversion
                 'portfolio.context_processors.processor',  # canonical tags
             ],
         },
@@ -77,7 +76,6 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
 
 # Internationalization
 LANGUAGE_CODE = 'en-GB'
@@ -104,6 +102,9 @@ EMAIL_RECIPIENT = ''
 
 # django-crispy-forms
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+# WhiteNoise
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 try:
     from .local_settings import *

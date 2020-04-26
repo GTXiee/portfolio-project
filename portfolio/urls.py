@@ -5,7 +5,6 @@ from django.conf.urls.static import static
 from django.contrib.sitemaps.views import sitemap
 
 import jobs.views
-
 from .sitemap import JobSitemap, StaticSitemap
 
 sitemaps = {
@@ -26,4 +25,6 @@ urlpatterns = [
     # sitemap
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='sitemap'),
 
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
+if not settings.USE_SFTP:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
